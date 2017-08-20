@@ -1,4 +1,9 @@
+main {
+    background-image: ./ComicRunApp/gtk_bkg_orig.jpg
+}
 #map {
-        height: 100%;
-        max-width: 600px;
+    height: 100% !important;
+    padding-bottom: 50%;
+    position: relative;
+    width: 100%;
       }

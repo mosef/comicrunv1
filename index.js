@@ -1,3 +1,4 @@
+// Load google maps
 var map, infoWindow;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -34,3 +35,8 @@ var map, infoWindow;
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
+//function to handle user search
+//function to 
+//function to get comic information
+//function to render comic information
+//function to take location from user and find near by comic shops
