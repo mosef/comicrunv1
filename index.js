@@ -35,8 +35,34 @@ var map, infoWindow;
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
-//function to handle user search
-//function to 
 //function to get comic information
+const COMIC_URL = 'http://comicvine.gamespot.com/api/issues/?api_key=6a6bc4387dea4888385c676865344a6317d4bdc9&format=json';
+function getComicInfo (searchTerm, callBack) {
+  const settings = {
+    url: COMIC_URL,
+    data: {
+      q: `${searchTerm} in:name`,
+      limit: 5
+    },
+    dataType: 'json',
+    type: 'GET',
+    success: callback
+  };
+
+  $.ajax(settings);
+}
+//function to handle user search
+function searchSubmit() {
+    $('.js-search-form').click(e=>{
+    event.preventDefault();
+    const searchTarget = $(event.currentTarget).find('.js-query');
+    const query = searchTarget.val();
+    getComicInfo(query,callBack)
+    })
+}
+
+//function for pressing the find comics button
+
+//function to render user search
 //function to render comic information
 //function to take location from user and find near by comic shops
