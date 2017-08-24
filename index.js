@@ -1,5 +1,4 @@
 // Load google maps
-/*
 var map, infoWindow;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -36,17 +35,16 @@ var map, infoWindow;
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
-*/
 
-//function to get comic information
-const COMIC_URL = 'https://comicvine.gamespot.com/api/issues/?api_key=6a6bc4387dea4888385c676865344a6317d4bdc9&format=jsonp';
+// refined function that pulls specific data from comic vine api
+const COMIC_URL = 'https://comicvine.gamespot.com/api/volumes/?api_key=6a6bc4387dea4888385c676865344a6317d4bdc9&format=jsonp';
 $.ajax({
-   url: COMIC_URL,
-   jsonp: "json_callback",
-   dataType: "jsonp",
-   success: function (data) {
-       console.log(data);
-   }
+    url: COMIC_URL,
+    jsonp: "json_callback",
+    dataType: "jsonp",
+    success: function (data) {
+        console.log(data.results);
+    }
 });
 
 //function to handle user search
